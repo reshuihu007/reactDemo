@@ -1,0 +1,26 @@
+module.exports = {
+    entry:'./app/index.js',
+    output:{
+        path:'./dist',
+        filename:'bundle.js'
+    },
+    devServer:{
+        contentBase:'./dist'
+    },
+    module:{
+        loaders:[
+            {
+                test:/\.js$/,
+                loader:'babel'
+            },
+            {
+                test:/\.css$/,
+                loader:'style!css'
+            },
+            {
+                test:/(eot|woff|woff2|svg|ttf)$/,
+                loader:'url'
+            }
+        ]
+    }
+}
